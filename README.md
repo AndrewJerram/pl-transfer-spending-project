@@ -29,10 +29,13 @@ Premier League wage bills, transfer spend, and league performance, 2010-11 to pr
   spend per club per season, in euros. Live scraping wasn't necessary here since
   this pre-built dataset already covers exactly what's needed - it's re-run
   weekly upstream if you want to refresh the raw files later.
-- **Wage bills:** no clean free bulk source exists. Plan is to hand-compile a season-
-  by-season table from club annual accounts / Companies House filings for the clubs
-  and seasons in scope, since this is inherently a manual, source-by-source task.
-  Not yet implemented.
+- **Wage bills:** no clean free bulk source exists, so this is compiled season by
+  season from two recurring journalism sources that source figures from actual
+  club accounts: the Guardian's annual Premier League finances review (David Conn,
+  best for 2010-11 through roughly 2015-16) and Swiss Ramble (swissramble.substack.com,
+  best for 2016-17 onward). See `data/raw/wages/SOURCES.md` for a season-by-season
+  status table and where to find each one. 2018-19 is done as a worked example;
+  the rest still need compiling by hand.
 
 ## Project layout
 ```
@@ -45,7 +48,8 @@ src/
   fetch_results.py       downloads season results CSVs
   load_results.py        combines seasons, derives final league tables
   load_transfers.py      combines transfer CSVs into spend/income/net per club-season
-  build_analysis_table.py joins standings + spend into one analysis-ready table
+  load_wages.py          combines hand-compiled wage CSVs (see data/raw/wages/SOURCES.md)
+  build_analysis_table.py joins standings + spend + wages into one analysis-ready table
 notebooks/               exploratory analysis (to be added)
 ```
 
@@ -55,15 +59,17 @@ pip install -r requirements.txt
 python src/fetch_results.py         # needs real internet access - see note above
 python src/load_results.py
 python src/load_transfers.py
+python src/load_wages.py          # optional until data/raw/wages/ has more seasons filled in
 python src/build_analysis_table.py
 ```
 
 ## Status
 - [x] Results data pipeline (fetch + combine + derive standings)
 - [x] Transfer spend data pipeline (gross spend / income / net per club-season)
-- [x] Join spend onto standings -> data/processed/analysis_table.csv
-- [ ] Wage bill data (manual compilation)
-- [ ] Inflation-adjust spend to real terms
+- [x] Wage bill pipeline built, one season (2018-19) compiled as a worked example
+- [x] Join spend + wages onto standings -> data/processed/analysis_table.csv
+- [ ] Compile remaining 15 seasons of wage data (see data/raw/wages/SOURCES.md)
+- [ ] Inflation-adjust spend and wages to real terms
 - [ ] EDA: scatter plots, correlation by table tier
 - [ ] Linear regression baseline + random forest comparison
 - [ ] Robustness checks (exclude relegated clubs, check for outlier-driven results)
