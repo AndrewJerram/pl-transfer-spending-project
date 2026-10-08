@@ -23,7 +23,7 @@ them:
 | 2020-21 | **done** | Swiss Ramble |
 | 2021-22 | **done** | Swiss Ramble |
 | 2022-23 | **done** | Swiss Ramble |
-| 2023-24 | not done | Swiss Ramble, Alliance Fund/Capology also compiled this season |
+| 2023-24 | **done** | Swiss Ramble |
 | 2024-25 | not done | Swiss Ramble |
 | 2025-26 | likely unavailable | season in progress - club accounts for a season aren't published until months after it ends, so this one may need to stay blank until well after the season finishes |
 
