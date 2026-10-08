@@ -10,7 +10,7 @@ them:
 
 | Season  | Status | Source |
 |---------|--------|--------|
-| 2010-11 | not done | Guardian |
+| 2010-11 | **done** | Guardian |
 | 2011-12 | not done | Guardian |
 | 2012-13 | not done | Guardian |
 | 2013-14 | not done | Guardian |
@@ -25,7 +25,7 @@ them:
 | 2022-23 | **done** | Swiss Ramble |
 | 2023-24 | **done** | Swiss Ramble |
 | 2024-25 | **done** | Deloitte  |
-| 2025-26 | likely unavailable | season in progress - club accounts for a season aren't published until months after it ends, so this one may need to stay blank until well after the season finishes |
+| 2025-26 | unavailable | season in progress - club accounts for a season aren't published until months after it ends, so this one may need to stay blank until well after the season finishes |
 
 ## File format
 
