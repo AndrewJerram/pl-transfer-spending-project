@@ -21,7 +21,7 @@ them:
 | 2018-19 | **done** | Swiss Ramble via PlanetFootball |
 | 2019-20 | **done** | Swiss Ramble via PlanetFootball |
 | 2020-21 | **done** | Swiss Ramble |
-| 2021-22 | not done | Swiss Ramble |
+| 2021-22 | **done** | Swiss Ramble |
 | 2022-23 | not done | Swiss Ramble |
 | 2023-24 | not done | Swiss Ramble, Alliance Fund/Capology also compiled this season |
 | 2024-25 | not done | Swiss Ramble |
