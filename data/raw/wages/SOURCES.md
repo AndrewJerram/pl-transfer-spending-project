@@ -16,7 +16,7 @@ them:
 | 2013-14 | **done** | Guardian |
 | 2014-15 | **done** | Guardian |
 | 2015-16 | **done** | Guardian |
-| 2016-17 | not done | Swiss Ramble |
+| 2016-17 | **done** | Guardian |
 | 2017-18 | not done | Swiss Ramble |
 | 2018-19 | **done** | Swiss Ramble via PlanetFootball |
 | 2019-20 | **done** | Swiss Ramble via PlanetFootball |
