@@ -12,7 +12,7 @@ them:
 |---------|--------|--------|
 | 2010-11 | **done** | Guardian |
 | 2011-12 | **done** | Guardian |
-| 2012-13 | not done | Guardian |
+| 2012-13 | **done** | Guardian |
 | 2013-14 | not done | Guardian |
 | 2014-15 | not done | Guardian |
 | 2015-16 | not done | Guardian or Swiss Ramble |
