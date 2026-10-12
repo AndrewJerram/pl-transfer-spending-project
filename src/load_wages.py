@@ -32,22 +32,23 @@ VALID_TEAM_NAMES = {
 
 def load_all_seasons() -> pd.DataFrame:
     frames = []
+    cols = ["Season", "Team", "wage_bill_gbp_m", "source_url"]
     for path in sorted(RAW_DIR.glob("*.csv")):
-        df = pd.read_csv(path)
-        frames.append(df)
+        df = pd.read_csv(path).dropna(how="all")
+        df["wage_bill_gbp_m"] = pd.to_numeric(df["wage_bill_gbp_m"], errors="coerce")
+        bad = df[df[["Season", "Team", "wage_bill_gbp_m"]].isna().any(axis=1)]
+        if len(bad):
+            print(f"WARNING: {path.name} has {len(bad)} row(s) with a missing or non-numeric value, skipped:")
+            print(bad.to_string())
+            df = df.drop(bad.index)
+        frames.append(df.reindex(columns=cols))
     if not frames:
-        raise FileNotFoundError(
-            f"No wage files found in {RAW_DIR} - see SOURCES.md to start "
-            "compiling them."
-        )
+        raise FileNotFoundError(f"No wage files found in {RAW_DIR}")
     combined = pd.concat(frames, ignore_index=True)
 
     unknown = set(combined["Team"].unique()) - VALID_TEAM_NAMES
     if unknown:
-        print(
-            f"WARNING: these team names in data/raw/wages/ aren't in the "
-            f"standard name set and won't join cleanly: {sorted(unknown)}"
-        )
+        print(f"WARNING: unrecognised team names in data/raw/wages/: {sorted(unknown)}")
     return combined
 
 
